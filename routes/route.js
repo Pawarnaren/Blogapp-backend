@@ -19,8 +19,8 @@ router.post('/signup', signupUser);
 // api end point for login 
 router.post('/login', loginUser)
 
-router.post('/file/upload', upload.single('file'), uploadImage);
-router.get('/file/:filename', getImage);
+// router.post('/file/upload', upload.single('file'), uploadImage);
+// router.get('/file/:filename', getImage);
 
 router.post('/create', authenticateToken, createPost);
 router.get('/posts', authenticateToken, getAllPosts);
