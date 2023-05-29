@@ -1,7 +1,7 @@
 import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
 
-const url = 'https://blogproject-gd2n.onrender.com';
+const url = 'blogapp-backend-teal.vercel.app';
 
 
 let gfs, gridfsBucket;
@@ -30,7 +30,7 @@ export const getImage = async (request, response) => {
         const readStream = gridfsBucket.openDownloadStream(file._id);
         readStream.pipe(response);
     } catch (error) {
-        response.status(500).json({ msg: error.message });
+        response.status(500).json({ msg: error });
     }
 }
 
