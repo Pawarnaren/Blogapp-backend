@@ -30,7 +30,7 @@ export const getImage = async (request, response) => {
         const readStream = gridfsBucket.openDownloadStream(file._id);
         readStream.pipe(response);
     } catch (error) {
-        response.status(500).send(error.message);
+        response.status(500).json({ msg: error.message });
     }
 }
 
